@@ -3,6 +3,11 @@
 This repository contains support materials for the JDEV 2017 [t4.a07
 workshop](http://devlog.cnrs.fr/jdev2017/t4.a07).
 
+Slides from the workshop are bundled with the repository:
+[`slides.md`](./slides.md).
+
+**Pro tip**: you can load the `slides.md` file content in a [Monod](https://monod.lelab.tailordev.fr) slidedeck 😉.
+
 ## Getting started
 
 Start this workshop by cloning the project:
