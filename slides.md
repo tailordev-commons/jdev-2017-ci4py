@@ -358,7 +358,7 @@ test climate:
 
 ![](https://media.giphy.com/media/y8P2Mo0vccFMY/giphy.gif)
 
-> Increase test coverage to 100% :muscle:
+> Increase test coverage to ~100% :muscle:
 
 https://docs.pytest.org/en/latest/
 
@@ -366,3 +366,5 @@ https://docs.pytest.org/en/latest/
 ---
 
 ## That's all folks!
+
+![](https://media.giphy.com/media/7FCFG6sYV5UxW/giphy.gif)
