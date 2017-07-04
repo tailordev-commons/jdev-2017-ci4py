@@ -7,6 +7,17 @@ import pandas as pd
 from .exceptions import DataLoadingException
 from .utils import slugify
 
+DEFAULT_TEMPERATURE_DATA_PATH = os.path.realpath(
+    os.path.join(
+        os.path.dirname(__file__),
+        './data'
+    )
+)
+DEFAULT_TEMPERATURE_DATA_FILE_PATH = os.path.join(
+    DEFAULT_TEMPERATURE_DATA_PATH,
+    'temperature_by_country.csv',
+)
+
 
 class Temperatures:
     """Play with Earth Surface Temperature Dataset from Kaggle.
@@ -15,32 +26,24 @@ class Temperatures:
     https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data
     """
 
-    def __init__(self):
+    def __init__(self, data_file_path=DEFAULT_TEMPERATURE_DATA_FILE_PATH):
 
         self.data = None
         self.country = None
         self.selection = None
-        self._load_data()
+        self._load_data(data_file_path)
 
-    def _load_data(self):
+    def _load_data(self, data_file_path):
         """Load data in a Pandas DataFrame from a csv file"""
 
-        temperature_file = os.path.realpath(
-            os.path.join(
-                os.path.dirname(__file__),
-                '../data/temperature_by_country.csv'
-            )
-
-        )
-
         self.data = pd.read_csv(
-            temperature_file,
+            data_file_path,
             parse_dates=['dt']
         )
 
         if self.data is None:
             raise DataLoadingException(
-                "No data loaded from file {}".format(temperature_file)
+                "No data loaded from file {}".format(data_file_path)
             )
 
     def _set_country(self, country):
