@@ -13,7 +13,7 @@ Slides from the workshop are bundled with the repository:
 Start this workshop by cloning the project:
 
 ```bash
-$ git clone path/to/project.git
+$ git clone git@github.com:tailordev-commons/jdev-2017-ci4py.git
 ```
 
 Create a python `virtualenv` and install dependencies:
