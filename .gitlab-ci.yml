@@ -1,0 +1,28 @@
+image: tailordev/pandas
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
+  - ~/.cache/pip/
+
+# Install the project and dependencies
+before_script:
+  # Print out python version for debugging
+  - python -V
+  - pip install -r requirements-dev.txt
+  - python setup.py install
+
+stages:
+  - lint
+  - test
+
+flake8:
+  stage: lint
+  script:
+    flake8
+
+test climate:
+  stage: test
+  script:
+    pytest
